@@ -1,0 +1,121 @@
+Day,Meal,Foods,Calories,Protein (g),Carbs (g),Fat (g)
+1,Breakfast,1 handful of semiya upma,144,6.8,22.0,2.2
+1,Lunch,Brahmi infused ½ bowl of rava upma,125,7.5,19.8,0.5
+1,Snack,Ashwagandha infused 2 bowls of brown rice with sambar,124,3.3,26.2,4.3
+1,Dinner,1 handful of 2 roti with Vegetable Kurma,120,9.2,16.2,0.5
+2,Breakfast,1 bowl of semiya upma,130,7.0,18.0,3.0
+2,Lunch,½ bowl of 2 roti with Vegetable Kurma,129,10.4,16.5,0.4
+2,Snack,2 bowls of 2 palak paratha with chutney,137,11.7,21.1,1.0
+2,Dinner,Methi Seeds infused 2 bowls of 2 chapati with Paneer Bhurji (Low Fat),118,10.4,3.6,7.4
+3,Breakfast,1 paratha of rice and sambar,152,5.2,24.9,4.1
+3,Lunch,1 handful of rice and sambar,134,4.3,15.6,5.9
+3,Snack,Neem infused 1 handful of 2 roti with Vegetable Kurma,144,10.0,21.6,0.4
+3,Dinner,small plate of rice and sambar,126,4.1,18.7,6.5
+4,Breakfast,1 handful of 2 palak paratha with chutney,125,10.6,16.3,1.0
+4,Lunch,small plate of rava upma,117,7.7,20.1,0.4
+4,Snack,1 cup of semiya upma,148,7.0,21.0,2.3
+4,Dinner,2 idlis of 2 palak paratha with chutney,133,8.4,15.9,1.0
+5,Breakfast,1 paratha of 2 Steamed Dhokla,150,4.1,16.3,5.9
+5,Lunch,Amla infused 1 cup of 4 Low Fat Vegetable Dhokla,140,4.1,20.8,3.5
+5,Snack,1 handful of 2 roti with Vegetable Kurma,102,7.5,27.0,0.4
+5,Dinner,1 small bowl of rice and sambar,150,5.0,20.0,5.0
+6,Breakfast,Giloy infused 1 paratha of 2 chapati with Paneer Bhurji (Low Fat),136,8.0,3.3,7.5
+6,Lunch,½ bowl of brown rice with matki sambar,162,6.1,15.5,4.4
+6,Snack,Methi Seeds infused ½ bowl of 2 Steamed Dhokla,133,4.2,24.2,6.3
+6,Dinner,1 handful of semiya upma,141,6.6,21.0,2.9
+7,Breakfast,2 bowls of brown rice with matki sambar,125,3.4,29.6,4.1
+7,Lunch,2 idlis of 2 chapati with Paneer Bhurji (Low Fat),104,10.9,2.5,5.1
+7,Snack,small plate of 2 Steamed Dhokla,144,4.6,27.2,3.6
+7,Dinner,Giloy infused 1 handful of brown rice with matki sambar,123,6.4,19.2,6.2
+8,Breakfast,small plate of 2 dosa with coconut chutney,100,7.7,19.2,1.6
+8,Lunch,small plate of rava upma,117,7.7,20.1,0.4
+8,Snack,Ashwagandha infused 2 idlis of 2 roti with Vegetable Kurma,139,7.8,28.6,0.6
+8,Dinner,Tulsi infused 1 handful of semiya upma,107,8.5,22.8,3.6
+9,Breakfast,2 idlis of brown rice with sambar,155,3.6,24.1,3.9
+9,Lunch,Amla infused 1 cup of 4 Low Fat Vegetable Dhokla,140,4.1,20.8,3.5
+9,Snack,½ bowl of 2 chapati with Paneer Bhurji (Low Fat),107,11.0,2.6,8.9
+9,Dinner,2 chapati with Paneer Bhurji (Low Fat),120,10.0,3.5,7.0
+10,Breakfast,small plate of 2 Steamed Dhokla,140,3.8,27.8,6.2
+10,Lunch,1 paratha of 4 Khaman Dhokla,159,4.6,23.1,6.3
+10,Snack,Giloy infused 1 handful of semiya upma,108,7.5,22.3,3.6
+10,Dinner,Giloy infused small plate of semiya upma,124,8.9,21.7,2.3
+11,Breakfast,Methi Seeds infused ½ bowl of rava upma,121,8.1,21.3,0.5
+11,Lunch,1 paratha of 2 palak paratha with chutney,99,7.2,24.5,0.8
+11,Snack,½ bowl of 4 Low Fat Vegetable Dhokla,117,4.8,20.4,3.9
+11,Dinner,small plate of Low-Fat Vegetable Pulao,174,3.6,27.1,2.9
+12,Breakfast,Amla infused small plate of 2 chapati with Paneer Bhurji (Low Fat),109,12.2,2.9,8.4
+12,Lunch,Amla infused small plate of rice Green Gram Curry,125,8.4,16.6,0.6
+12,Snack,small plate of brown rice with matki sambar,143,3.7,18.2,4.3
+12,Dinner,½ bowl of 2 Besan Chilla,96,6.6,12.6,4.8
+13,Breakfast,1 paratha of brown rice with matki sambar,125,4.6,16.2,5.7
+13,Lunch,Tulsi infused 2 idlis of brown rice with matki sambar,132,3.5,27.6,3.6
+13,Snack,small plate of brown rice with sambar,146,3.9,28.2,4.0
+13,Dinner,1 cup of rice and sambar,178,5.6,23.9,5.9
+14,Breakfast,½ bowl of brown rice with matki sambar,115,3.5,27.2,4.1
+14,Lunch,2 bowls of Low-Fat Vegetable Pulao,160,4.4,22.2,2.3
+14,Snack,Methi Seeds infused small plate of rice and sambar,154,6.4,16.4,6.1
+14,Dinner,2 bowls of 2 chapati with Paneer Bhurji (Low Fat),114,7.3,3.8,7.6
+15,Breakfast,½ bowl of brown rice with matki sambar,115,3.5,27.2,4.1
+15,Lunch,1 paratha of Tamarind Rice (Low Oil),146,3.4,27.4,2.2
+15,Snack,Tulsi infused ½ bowl of semiya upma,147,7.6,18.9,3.0
+15,Dinner,½ bowl of Oats Upma,123,5.0,21.3,3.0
+16,Breakfast,Neem infused 2 bowls of 2 Steamed Dhokla,139,5.1,22.4,3.9
+16,Lunch,2 bowls of 2 roti with Vegetable Kurma,130,8.5,17.5,0.5
+16,Snack,Neem infused 1 cup of rice and sambar,134,5.0,18.8,4.9
+16,Dinner,2 idlis of 2 chapati with Paneer Bhurji (Low Fat),103,9.7,4.3,6.9
+17,Breakfast,2 idlis of brown rice with matki sambar,126,5.5,19.5,5.1
+17,Lunch,½ bowl of 2 palak paratha with chutney,129,10.6,22.9,0.9
+17,Snack,Giloy infused small plate of brown rice with matki sambar,128,2.4,30.9,4.1
+17,Dinner,½ bowl of Oats Upma,124,6.4,26.4,4.6
+18,Breakfast,1 handful of Oats Upma,153,4.1,26.6,3.4
+18,Lunch,Methi Seeds infused 2 bowls of 2 palak paratha with chutney,123,11.0,18.5,0.6
+18,Snack,Tulsi infused 1 paratha of Oats Upma,157,3.6,23.7,3.4
+18,Dinner,½ bowl of 2 chapati with Paneer Bhurji (Low Fat),122,7.4,3.2,8.8
+19,Breakfast,Methi Seeds infused 2 bowls of semiya upma,105,8.0,19.2,3.4
+19,Lunch,1 paratha of 2 palak paratha with chutney,99,7.2,24.5,0.8
+19,Snack,Tulsi infused 2 idlis of brown rice with sambar,148,3.7,23.2,3.9
+19,Dinner,2 idlis of rice Green Gram Curry,107,7.9,17.1,0.6
+20,Breakfast,Amla infused small plate of 2 chapati with Paneer Bhurji (Low Fat),109,12.2,2.9,8.4
+20,Lunch,Amla infused 2 idlis of 4 Khaman Dhokla,126,6.2,15.6,5.5
+20,Snack,small plate of Low-Fat Vegetable Pulao,158,4.6,26.4,3.2
+20,Dinner,2 idlis of Oats Upma,144,5.4,20.8,2.8
+21,Breakfast,Methi Seeds infused 2 bowls of semiya upma,105,8.0,19.2,3.4
+21,Lunch,1 handful of 2 roti and capsicum sabji with salad,133,8.6,23.6,0.7
+21,Snack,1 paratha of rice and sambar,148,6.0,20.0,4.6
+21,Dinner,½ bowl of semiya upma,147,6.6,18.7,2.3
+22,Breakfast,1 cup of Low-Fat Vegetable Pulao,178,3.8,22.2,3.2
+22,Lunch,2 idlis of 2 roti and capsicum sabji with salad,125,8.6,16.9,1.0
+22,Snack,small plate of 2 Steamed Dhokla,151,3.6,21.2,5.6
+22,Dinner,½ bowl of brown rice with matki sambar,140,2.9,24.8,3.6
+23,Breakfast,1 paratha of brown rice with matki sambar,125,4.6,16.2,5.7
+23,Lunch,1 handful of Low-Fat Vegetable Pulao,141,3.1,31.3,3.7
+23,Snack,Tulsi infused ½ bowl of brown rice with sambar,155,3.6,20.1,4.0
+23,Dinner,Methi Seeds infused 1 cup of 2 dosa with coconut chutney,109,7.2,21.8,1.1
+24,Breakfast,1 paratha of Oats Upma,115,5.2,19.7,3.9
+24,Lunch,Tulsi infused ½ bowl of 2 roti with Vegetable Kurma,136,9.6,21.7,0.5
+24,Snack,2 bowls of 2 palak paratha with chutney,137,11.7,21.1,1.0
+24,Dinner,2 idlis of 2 chapati with Paneer Bhurji (Low Fat),103,9.7,4.3,6.9
+25,Breakfast,Neem infused ½ bowl of 4 Khaman Dhokla,156,3.9,16.3,4.9
+25,Lunch,1 bowl of Low-Fat Vegetable Pulao,150,4.0,26.0,3.0
+25,Snack,1 cup of Oats Upma,127,5.3,15.6,4.8
+25,Dinner,2 bowls of brown rice with sambar,148,2.7,28.4,4.1
+26,Breakfast,1 cup of brown rice with sambar,154,3.3,27.5,4.5
+26,Lunch,2 idlis of 4 Khaman Dhokla,131,6.0,13.4,5.5
+26,Snack,Brahmi infused 2 idlis of 4 Khaman Dhokla,148,5.8,18.3,5.8
+26,Dinner,Ashwagandha infused 1 handful of 2 chapati with Paneer Bhurji (Low Fat),106,9.2,2.5,5.4
+27,Breakfast,small plate of Oats Upma,151,6.3,23.3,5.1
+27,Lunch,Tulsi infused 1 cup of rice and sambar,161,4.6,20.6,5.4
+27,Snack,2 idlis of 2 chapati with Paneer Bhurji (Low Fat),116,9.4,3.7,7.9
+27,Dinner,1 handful of rice and sambar,169,4.6,22.2,4.2
+28,Breakfast,Tulsi infused 2 bowls of Oats Upma,128,6.0,26.0,4.8
+28,Lunch,½ bowl of 2 palak paratha with chutney,95,11.1,18.6,0.8
+28,Snack,Brahmi infused 1 cup of 2 roti with Vegetable Kurma,119,8.0,28.8,0.5
+28,Dinner,2 idlis of 4 Khaman Dhokla,128,5.8,19.5,4.5
+29,Breakfast,small plate of 2 chapati with Paneer Bhurji (Low Fat),117,8.3,4.1,7.0
+29,Lunch,1 paratha of brown rice with matki sambar,148,3.4,30.3,4.2
+29,Snack,Brahmi infused 2 idlis of 4 Khaman Dhokla,148,5.8,18.3,5.8
+29,Dinner,Methi Seeds infused 2 idlis of 2 chapati with Paneer Bhurji (Low Fat),128,11.3,3.8,7.3
+30,Breakfast,2 idlis of 4 Khaman Dhokla,150,4.1,20.9,4.4
+30,Lunch,1 paratha of 2 chapati with Paneer Bhurji (Low Fat),143,8.8,4.3,6.4
+30,Snack,Giloy infused 1 paratha of 4 Khaman Dhokla,129,4.4,20.5,5.0
+30,Dinner,½ bowl of semiya upma,128,7.9,23.0,2.8
