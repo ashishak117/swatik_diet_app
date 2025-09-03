@@ -3,6 +3,8 @@ from pydantic import BaseModel
 from fastapi.responses import StreamingResponse
 import pandas as pd
 import io
+import os
+import json
 
 from recommender import calculate_nutrition, generate_30_day_plan
 import firebase_admin
@@ -11,8 +13,10 @@ from firebase_admin import credentials, firestore
 # ----------------------
 # Firebase Setup
 # ----------------------
-cred = credentials.Certificate("firebase_key.json")  # <- replace with your service account JSON
-firebase_admin.initialize_app(cred)
+firebase_key = os.getenv("FIREBASE_KEY")  # environment variable in Render
+if not firebase_admin._apps:  # avoid re-init if hot reload
+    cred = credentials.Certificate(json.loads(firebase_key))
+    firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 app = FastAPI()
