@@ -6,7 +6,7 @@ import io
 import os
 import json
 
-from recommender import calculate_nutrition, generate_30_day_plan
+from app.recommender import calculate_nutrition, generate_30_day_plan
 import firebase_admin
 from firebase_admin import credentials, firestore
 
