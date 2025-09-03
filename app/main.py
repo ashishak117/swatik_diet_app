@@ -11,7 +11,7 @@ from firebase_admin import credentials, firestore
 # ----------------------
 # Firebase Setup
 # ----------------------
-cred = credentials.Certificate("firebase_key.json")  # <- replace with your service account JSON
+cred = credentials.Certificate("")  # <- replace with your service account JSON
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
