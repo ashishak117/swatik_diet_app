@@ -45,20 +45,19 @@ def normalize_goal(goal: str):
         return "weight_loss"
     return "diabetes"
 
-def get_or_create_plan(user_id, needs, condition="weight_loss"):
+def overwrite_plan(user_id, needs, condition="weight_loss"):
     doc_ref = db.collection("meal_plans").document(user_id)
-    doc = doc_ref.get()
 
-    if doc.exists:
-        return doc.to_dict()["plan"]
-
+    # Always regenerate a fresh plan
     plan, totals = generate_30_day_plan(df, needs, condition)
     plan_list = plan.to_dict(orient="records")
 
+    # Overwrite Firestore doc
     doc_ref.set({
         "plan": plan_list,
         "needs": needs,
-        "condition": condition
+        "condition": condition,
+        "updatedAt": firestore.SERVER_TIMESTAMP
     })
 
     return plan_list
@@ -79,7 +78,7 @@ def generate_plan(profile: ProfileInput):
         goal="weight_loss" if condition == "weight_loss" else "maintenance"
     )
 
-    plan = get_or_create_plan(profile.user_id, needs, condition)
+    plan = overwrite_plan(profile.user_id, needs, condition)
     return {"needs": needs, "plan": plan}
 
 @app.post("/plan/csv")
@@ -95,7 +94,7 @@ def download_plan(profile: ProfileInput):
         goal="weight_loss" if condition == "weight_loss" else "maintenance"
     )
 
-    plan = get_or_create_plan(profile.user_id, needs, condition)
+    plan = overwrite_plan(profile.user_id, needs, condition)
 
     buffer = io.StringIO()
     pd.DataFrame(plan).to_csv(buffer, index=False)
