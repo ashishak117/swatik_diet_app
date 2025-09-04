@@ -13,16 +13,16 @@ from firebase_admin import credentials, firestore
 # ----------------------
 # Firebase Setup
 # ----------------------
-firebase_key = os.getenv("FIREBASE_KEY")  # environment variable in Render
-if not firebase_admin._apps:  # avoid re-init if hot reload
+firebase_key = os.getenv("FIREBASE_KEY")
+if not firebase_admin._apps:
     cred = credentials.Certificate(json.loads(firebase_key))
     firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 app = FastAPI()
 
-# Load dataset once
-df = pd.read_csv("dataset/satwik_diet_dataset_6k.csv")
+# ✅ Load dataset properly
+df = prepare_dataset("dataset/satwik_diet_dataset_6k.csv")
 
 # ----------------------
 # Request Schemas
@@ -34,11 +34,17 @@ class ProfileInput(BaseModel):
     height: float
     gender: str
     activity_level: str
-    goal: str  # "weight_loss" or "strict_diabetes"
+    goal: str  # "weight_loss" or "diabetes"
 
 # ----------------------
-# Helper: Fetch or Persist Plan
+# Helper
 # ----------------------
+def normalize_goal(goal: str):
+    goal = goal.lower().replace("-", "_")
+    if goal in ["weight_loss", "weightloss"]:
+        return "weight_loss"
+    return "diabetes"
+
 def get_or_create_plan(user_id, needs, condition="weight_loss"):
     doc_ref = db.collection("meal_plans").document(user_id)
     doc = doc_ref.get()
@@ -62,7 +68,7 @@ def get_or_create_plan(user_id, needs, condition="weight_loss"):
 # ----------------------
 @app.post("/plan")
 def generate_plan(profile: ProfileInput):
-    condition = "weight_loss" if profile.goal == "weight_loss" else "diabetes"
+    condition = normalize_goal(profile.goal)
 
     needs = calculate_nutrition(
         age=profile.age,
@@ -78,7 +84,7 @@ def generate_plan(profile: ProfileInput):
 
 @app.post("/plan/csv")
 def download_plan(profile: ProfileInput):
-    condition = "weight_loss" if profile.goal == "weight_loss" else "diabetes"
+    condition = normalize_goal(profile.goal)
 
     needs = calculate_nutrition(
         age=profile.age,
