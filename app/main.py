@@ -1,3 +1,4 @@
+# main.py
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.responses import StreamingResponse
@@ -7,6 +8,7 @@ import os
 import json
 
 from app.recommender import calculate_nutrition, generate_30_day_plan, prepare_dataset
+
 import firebase_admin
 from firebase_admin import credentials, firestore
 
@@ -95,7 +97,6 @@ def generate_plan(profile: ProfileInput):
     plan = regenerate_plan(profile.user_id, profile_dict, needs, condition)
     return {"needs": needs, "plan": plan}
 
-
 @app.post("/plan/csv")
 def download_plan(profile: ProfileInput):
     condition = normalize_goal(profile.goal)
@@ -112,3 +113,9 @@ def download_plan(profile: ProfileInput):
         media_type="text/csv",
         headers={"Content-Disposition": "attachment; filename=plan.csv"}
     )
+
+# ----------------------
+# Food Explorer (JSON-only, no external APIs)
+# ----------------------
+from app.food_search_local import router as ayur_local_router
+app.include_router(ayur_local_router, prefix="/api")
