@@ -21,7 +21,7 @@ db = firestore.client()
 
 app = FastAPI()
 
-# ✅ Load dataset properly
+# ✅ Load dataset
 df = prepare_dataset("dataset/satwik_diet_dataset_6k.csv")
 
 # ----------------------
@@ -45,20 +45,18 @@ def normalize_goal(goal: str):
         return "weight_loss"
     return "diabetes"
 
-def overwrite_plan(user_id, needs, condition="weight_loss"):
-    doc_ref = db.collection("meal_plans").document(user_id)
-
-    # Always regenerate a fresh plan
+def regenerate_plan(user_id, profile: dict, needs, condition="weight_loss"):
     plan, totals = generate_30_day_plan(df, needs, condition)
     plan_list = plan.to_dict(orient="records")
 
-    # Overwrite Firestore doc
-    doc_ref.set({
+    # Save plan & profile in Firestore
+    db.collection("meal_plans").document(user_id).set({
         "plan": plan_list,
         "needs": needs,
         "condition": condition,
         "updatedAt": firestore.SERVER_TIMESTAMP
     })
+    db.collection("profiles").document(user_id).set(profile)
 
     return plan_list
 
@@ -69,6 +67,10 @@ def overwrite_plan(user_id, needs, condition="weight_loss"):
 def generate_plan(profile: ProfileInput):
     condition = normalize_goal(profile.goal)
 
+    profile_dict = profile.dict()
+    profile_ref = db.collection("profiles").document(profile.user_id)
+    profile_doc = profile_ref.get()
+
     needs = calculate_nutrition(
         age=profile.age,
         weight=profile.weight,
@@ -78,26 +80,31 @@ def generate_plan(profile: ProfileInput):
         goal="weight_loss" if condition == "weight_loss" else "maintenance"
     )
 
-    plan = overwrite_plan(profile.user_id, needs, condition)
+    # If profile exists and is identical → return old plan
+    if profile_doc.exists:
+        stored_profile = profile_doc.to_dict()
+        if stored_profile == profile_dict:
+            plan_doc = db.collection("meal_plans").document(profile.user_id).get()
+            if plan_doc.exists:
+                return {
+                    "needs": plan_doc.to_dict()["needs"],
+                    "plan": plan_doc.to_dict()["plan"]
+                }
+
+    # Else regenerate
+    plan = regenerate_plan(profile.user_id, profile_dict, needs, condition)
     return {"needs": needs, "plan": plan}
+
 
 @app.post("/plan/csv")
 def download_plan(profile: ProfileInput):
     condition = normalize_goal(profile.goal)
 
-    needs = calculate_nutrition(
-        age=profile.age,
-        weight=profile.weight,
-        height=profile.height,
-        gender=profile.gender,
-        activity_level=profile.activity_level,
-        goal="weight_loss" if condition == "weight_loss" else "maintenance"
-    )
-
-    plan = overwrite_plan(profile.user_id, needs, condition)
+    # Call /plan logic
+    result = generate_plan(profile)
 
     buffer = io.StringIO()
-    pd.DataFrame(plan).to_csv(buffer, index=False)
+    pd.DataFrame(result["plan"]).to_csv(buffer, index=False)
     buffer.seek(0)
 
     return StreamingResponse(
